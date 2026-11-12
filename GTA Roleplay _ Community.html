@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GTA Roleplay | Community — entra na cidade, cria a tua história e vive o roleplay no SA-MP. Consulta informações, regras e como jogar.">
+  <meta name="keywords" content="GTA Roleplay, SA-MP, GTA San Andreas Roleplay, servidor roleplay, GTA Roleplay Community">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="GTA Roleplay | Community">
+  <meta property="og:description" content="Uma cidade. Mil histórias. A tua começa aqui.">
+  <meta property="og:type" content="website">
+  <title>GTA Roleplay | Community — A tua história começa aqui</title>
+  <style>
+    :root {
+      --site-primary: #6557F5;
+      --site-secondary: #211B68;
+      --site-background: #080824;
+      --site-on-primary: #FFFFFF;
+      --site-on-secondary: #E8E6FF;
+      --site-on-background: #F5F4FF;
+      --site-font-body: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --site-font-heading: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --site-heading-scale: 1;
+      --site-spacing-scale: 1;
+      --site-radius-scale: 1;
+      --site-decoration-opacity: 1;
+      color-scheme: light dark;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #080824; color: #F5F4FF; font-family: var(--site-font-body); }
+    .app { min-height: 100vh; width: 100%; background-color: var(--site-background); color: var(--site-on-background); overflow: hidden; border-radius: 0; position: relative; }
+    .app::before { content: none; }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 44px)); margin: 0 auto; position: relative; }
+    header { position: relative; z-index: 2; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .nav { height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; letter-spacing: -.04em; }
+    .brand-mark { width: 38px; height: 38px; border-radius: calc(11px * var(--site-radius-scale)); display: grid; place-items: center; color: var(--site-on-primary); background: var(--site-primary); font-weight: 950; }
+    .brand small { display: block; color: #A7A5C8; font-size: 10px; letter-spacing: .19em; font-weight: 700; margin-top: 3px; }
+    .nav-links { display: flex; align-items: center; gap: 28px; color: #C0BEDA; font-size: 13px; font-weight: 650; }
+    .nav-links a:hover { color: var(--site-primary); }
+    .nav-cta, .button { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid rgba(255,255,255,.12); cursor: pointer; font: inherit; font-weight: 650; border-radius: 7px; padding: 12px 17px; background: #5147CE; color: #FFFFFF; transition: background .15s, border-color .15s; text-transform: none; }
+    .nav-cta:hover, .button:hover { background: #5D53D9; border-color: rgba(255,255,255,.22); }
+    .hero { min-height: 510px; display: grid; grid-template-columns: 1.1fr .9fr; align-items: center; gap: 35px; padding: 68px 0 72px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--site-primary); text-transform: uppercase; letter-spacing: .19em; font-size: 10px; font-weight: 900; }
+    .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--site-primary); box-shadow: 0 0 15px var(--site-primary); }
+    h1, h2, h3 { font-family: var(--site-font-heading); }
+    h1 { font-size: clamp(46px, 6.5vw, 78px); line-height: .99; letter-spacing: -.075em; margin: 23px 0; max-width: 650px; }
+    h1 span { color: var(--site-primary); }
+    .lead { color: #C0BEDA; font-size: 16px; line-height: 1.75; max-width: 520px; }
+    .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
+    .button.secondary { color: #E7E6FA; background: transparent; border: 1px solid rgba(255,255,255,.2); }
+    .button.secondary:hover { background: rgba(255,255,255,.06); }
+    .visual { min-height: 300px; display: flex; align-items: center; justify-content: center; padding: 36px; border: 1px solid rgba(255,255,255,.14); border-radius: calc(12px * var(--site-radius-scale)); background: #11113B; text-align: center; }
+    .visual-label strong { display: block; color: #FFFFFF; font-size: clamp(28px, 4vw, 42px); letter-spacing: -.05em; }
+    .visual-label span { display: block; margin-top: 10px; color: #BDB9EA; font-size: 13px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); }
+    .stat { padding: 25px 20px; text-align: center; }
+    .stat + .stat { border-left: 1px solid rgba(255,255,255,.1); }
+    .stat strong { display: block; color: var(--site-primary); font-size: 23px; letter-spacing: -.04em; }
+    .stat span { color: #A7A5C8; font-size: 11px; }
+    section { padding: 72px 0; }
+    .section-head { max-width: 610px; margin-bottom: 35px; }
+    .section-head h2 { font-size: clamp(32px, 4vw, 48px); letter-spacing: -.06em; margin: 14px 0; }
+    .section-head p { color: #C0BEDA; line-height: 1.75; margin: 0; }
+    .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+    .feature { padding: 23px; background: #10102F; border: 1px solid rgba(255,255,255,.1); border-radius: calc(12px * var(--site-radius-scale)); }
+    .feature-icon { width: 40px; height: 40px; display: grid; place-items: center; background: var(--site-secondary); color: var(--site-primary); border-radius: 11px; font-size: 18px; }
+    .feature h3 { margin: 20px 0 9px; font-size: 17px; }
+    .feature p { color: #B5B3D0; font-size: 13px; line-height: 1.7; margin: 0; }
+    .join { background: #11113B; border-top: 1px solid rgba(255,255,255,.1); border-bottom: 1px solid rgba(255,255,255,.1); }
+    .join-grid { display: grid; grid-template-columns: 1fr .9fr; align-items: center; gap: 50px; }
+    .join h2 { font-size: clamp(34px, 4vw, 51px); letter-spacing: -.065em; margin: 14px 0; }
+    .join p { color: #C0BEDA; line-height: 1.75; }
+    .join-grid > div:first-child .button { display: table; margin: 24px auto 0; }
+    .connect-card { background: #09092A; border: 1px solid rgba(255,255,255,.13); border-radius: calc(12px * var(--site-radius-scale)); padding: 23px; }
+    .connect-card label { display: block; color: #BDB9EA; text-transform: uppercase; font-size: 10px; letter-spacing: .12em; font-weight: 750; margin-bottom: 10px; }
+    .ip-row { display: flex; gap: 8px; align-items: center; background: #151545; border: 1px solid rgba(255,255,255,.12); border-radius: 8px; padding: 8px 8px 8px 14px; }
+    .ip-row code { flex: 1; color: #FFFFFF; font-size: 13px; overflow-wrap: anywhere; }
+    .copy { border: 1px solid rgba(255,255,255,.16); border-radius: 6px; background: #39338E; color: #FFFFFF; font-weight: 650; padding: 9px 12px; cursor: pointer; }
+    .copy:hover { background: #4942A8; }
+    .placeholder { color: #AAA8C8; font-size: 11px; line-height: 1.6; margin-top: 10px; }
+    .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .rule { display: flex; gap: 15px; padding: 18px; border: 1px solid rgba(255,255,255,.1); background: #10102F; border-radius: calc(10px * var(--site-radius-scale)); }
+    .rule b { color: var(--site-primary); font-size: 12px; }
+    .rule strong { display: block; margin-bottom: 5px; font-size: 14px; }
+    .rule span { color: #B5B3D0; font-size: 12px; line-height: 1.65; }
+    .final-cta { text-align: center; padding: 65px 20px; background: #0D0D31; }
+    .final-cta h2 { font-size: clamp(36px, 5vw, 58px); letter-spacing: -.07em; margin: 12px 0; }
+    .final-cta p { color: #C0BEDA; margin: 0 auto 25px; max-width: 540px; line-height: 1.75; }
+    footer { border-top: 1px solid rgba(255,255,255,.1); padding: 25px 0; color: #AAA8C8; font-size: 11px; }
+    .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-links { display: flex; gap: 18px; }
+    .footer-links a:hover { color: var(--site-primary); }
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .nav { height: 68px; }
+      .nav-links { display: none; }
+      .nav-cta { padding: 10px 12px; font-size: 11px; }
+      .hero { grid-template-columns: 1fr; padding: 65px 0 55px; min-height: auto; }
+      .visual { min-height: 300px; }
+      .features { grid-template-columns: 1fr; }
+      .join-grid { grid-template-columns: 1fr; gap: 25px; }
+      .rules-grid { grid-template-columns: 1fr; }
+      section { padding: 70px 0; }
+      .stats { grid-template-columns: 1fr 1fr 1fr; }
+      .stat { padding: 20px 8px; }
+      .stat strong { font-size: 18px; }
+      .stat span { font-size: 9px; }
+      .footer-row { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <main class="app" id="top">
+    <header>
+      <div class="wrap nav">
+        <a class="brand" href="#top" aria-label="GTA Roleplay Community início">
+          <span class="brand-mark">RP</span>
+          <span>GTA ROLEPLAY<small>COMMUNITY</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#sobre">A cidade</a><a href="#como-jogar">Como jogar</a><a href="#regras">Regras</a>
+        </nav>
+        <a class="nav-cta" href="#como-jogar">ENTRAR NA CIDADE ↗</a>
+      </div>
+    </header>
+
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> SA-MP ROLEPLAY COMMUNITY</div>
+        <h1>Uma cidade.<br><span>Mil histórias.</span><br>A tua começa aqui.</h1>
+        <p class="lead">Cria a tua identidade, conhece novas pessoas e constrói o teu próprio caminho. O teu próximo capítulo no GTA Roleplay começa dentro da cidade.</p>
+        <div class="hero-actions">
+          <a class="button" href="#como-jogar">COMEÇAR A JOGAR <span>→</span></a>
+          <a class="button secondary" href="#sobre">CONHECER A CIDADE</a>
+        </div>
+      </div>
+      <div class="visual">
+        <div class="visual-label"><strong>GTA ROLEPLAY<br>COMMUNITY</strong><span>Servidor SA-MP</span></div>
+      </div>
+    </div>
+
+    <section id="sobre">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">01 / SOBRE A COMUNIDADE</div>
+          <h2>Mais do que entrar no jogo. É viver a cidade.</h2>
+          <p>O GTA Roleplay | Community é o ponto de encontro para quem quer participar numa experiência de interpretação de personagens, respeitar as regras e construir histórias com outros jogadores.</p>
+        </div>
+        <div class="features">
+          <article class="feature"><div class="feature-icon">⌖</div><h3>Uma cidade para explorar</h3><p>Descobre oportunidades, conhece os espaços da cidade e encontra o teu próprio lugar no mundo do Roleplay.</p></article>
+          <article class="feature"><div class="feature-icon">✦</div><h3>Histórias que ganham vida</h3><p>Interage com outros jogadores, toma decisões e desenvolve a tua personagem através de experiências partilhadas.</p></article>
+          <article class="feature"><div class="feature-icon">盾</div><h3>Comunidade organizada</h3><p>Consulta os comunicados, acompanha as atualizações e conhece as regras que mantêm a experiência justa para todos.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="join" id="como-jogar">
+      <div class="wrap join-grid">
+        <div>
+          <div class="eyebrow">02 / COMO ENTRAR</div>
+          <h2>Prepara-te para entrar na cidade.</h2>
+          <p>Instala o GTA San Andreas e o cliente SA-MP compatível. Depois, utiliza o endereço oficial do servidor para te conectares. Consulta também os canais da comunidade para receberes instruções atualizadas.</p>
+          <a class="button" href="#regras">VER REGRAS ANTES DE ENTRAR →</a>
+        </div>
+        <div class="connect-card">
+          <label>ENDEREÇO IP DO SERVIDOR</label>
+          <div class="ip-row"><code id="server-ip">142.132.203.47:17600</code><button class="copy" id="copy-ip" type="button">COPIAR</button></div>
+          <div class="placeholder">Copia o endereço e liga-te à cidade através do cliente SA-MP.</div>
+          <div style="height:20px"></div>
+          <label>COMUNIDADE / CONTACTO</label>
+          <div class="ip-row"><code id="community-link">https://chat.whatsapp.com/IVhihDDs4fH1GeBFi0nVHL</code><button class="copy" id="copy-link" type="button">COPIAR</button></div>
+          <div class="placeholder">Entra no grupo oficial para receber avisos, novidades e apoio da comunidade.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="regras">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">03 / CONVIVÊNCIA</div>
+          <h2>O respeito também faz parte do jogo.</h2>
+          <p>Estas são orientações gerais de convivência. O regulamento completo e oficial da cidade deverá ser consultado no canal indicado pela administração.</p>
+        </div>
+        <div class="rules-grid">
+          <div class="rule"><b>01</b><div><strong>Respeita todos os jogadores</strong><span>Trata a comunidade com educação, dentro e fora do jogo.</span></div></div>
+          <div class="rule"><b>02</b><div><strong>Valoriza o Roleplay</strong><span>Age de forma coerente com a tua personagem e com a situação.</span></div></div>
+          <div class="rule"><b>03</b><div><strong>Segue as regras oficiais</strong><span>Conhece o regulamento e respeita as decisões da administração.</span></div></div>
+          <div class="rule"><b>04</b><div><strong>Ajuda a manter a ordem</strong><span>Evita conflitos desnecessários e utiliza os canais adequados para reportar problemas.</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="final-cta">
+      <div class="eyebrow">A CIDADE ESTÁ À TUA ESPERA</div>
+      <h2>Não fiques de fora.</h2>
+      <p>Entra na comunidade, acompanha as informações oficiais e prepara-te para escrever a tua própria história no GTA Roleplay.</p>
+      <a class="button" href="#como-jogar">QUERO ENTRAR NA CIDADE ↗</a>
+    </div>
+
+    <footer>
+      <div class="wrap footer-row">
+        <div>© <span id="year"></span> GTA ROLEPLAY | COMMUNITY. Comunidade independente de jogadores.</div>
+        <div class="footer-links"><a href="#sobre">Sobre</a><a href="#como-jogar">Como jogar</a><a href="#regras">Regras</a></div>
+      </div>
+    </footer>
+  </main>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function copyText(value, button) {
+      if (!value || value.includes('A DEFINIR')) {
+        button.textContent = 'POR DEFINIR';
+        setTimeout(() => button.textContent = 'COPIAR', 1600);
+        return;
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).then(() => {
+          button.textContent = 'COPIADO!';
+          setTimeout(() => button.textContent = 'COPIAR', 1600);
+        }).catch(() => { button.textContent = 'INDISPONÍVEL'; });
+      } else {
+        button.textContent = 'COPIAR MANUALMENTE';
+      }
+    }
+    document.getElementById('copy-ip').addEventListener('click', function () {
+      copyText(document.getElementById('server-ip').textContent.trim(), this);
+    });
+    document.getElementById('copy-link').addEventListener('click', function () {
+      copyText(document.getElementById('community-link').textContent.trim(), this);
+    });
+  </script>
+</body>
+</html>
